@@ -4,7 +4,26 @@ public class ComplexNumber {
     public static void main(String[] args) {
         ComplexNumber a = new ComplexNumber(1, 1);
         ComplexNumber b = new ComplexNumber(1, 1);
+        System.out.println(a.equals(b));
+        System.out.println(a.hashCode());
+        System.out.println(b.hashCode());
+
     }
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if(o == null || getClass() != o.getClass()) return false;
+        ComplexNumber that = (ComplexNumber) o;
+        if (Double.compare(that.re, re) != 0) return false;
+        return Double.compare(that.im, im) == 0;
+    }
+//    @Override
+//    public int hashCode() {
+//        //int result = a == null ? 0 : b.hashCode();
+//        return hashCode();
+//    }
+
+
         public ComplexNumber() {
         }
 
